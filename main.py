@@ -20,33 +20,10 @@ from processors import process_video1_roi, process_video2_line
 from display import create_combined_view, print_final_report
 
 
-def print_startup_banner():
-    """Print startup information"""
-    print("\n" + "="*70)
-    print("LINE CROSSING PEOPLE COUNTING SYSTEM")
-    print("="*70)
-    print(f"Starting count: {STARTING_COUNT} people")
-    print("\n🔹 SIMPLIFIED TRACKING LOGIC:")
-    print("  • Track person frame-by-frame ONLY for crossing detection")
-    print("  • Cross ENTER line (down) → +1 → STOP tracking")
-    print("  • Cross EXIT line (up) → -1 → STOP tracking")
-    print("  • No status flags, just detect crossing and count")
-    print("\nPress ESC to exit")
-    print("="*70 + "\n")
-
-
 def main():
-    """Main execution function"""
-    
     # Print device info
     print_device_info(DEVICE)
     print()
-    
-    # Print startup banner
-    print_startup_banner()
-    
-    # Initialize components
-    print("Initializing components...")
     
     # Load models
     model1, model2 = load_models()
@@ -93,7 +70,7 @@ def main():
     last_save_time = time.time()
     
     # Create display window
-    cv2.namedWindow("Simplified Line Crossing System", cv2.WINDOW_NORMAL)
+    cv2.namedWindow("People Counting System", cv2.WINDOW_NORMAL)
     
     try:
         while True:
@@ -158,7 +135,7 @@ def main():
                 data_summary
             )
             
-            cv2.imshow("Simplified Line Crossing System", combined_view)
+            cv2.imshow("People Counting System", combined_view)
             
             # ==========================================
             # EXIT ON ESC
