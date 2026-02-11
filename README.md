@@ -78,7 +78,7 @@ Perfect for retail analytics, building management, occupancy monitoring, and sma
 ### Computer Vision & AI
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| **YOLOv8** | Latest | Real-time object detection |
+| **YOLO26** | Latest | Real-time object detection |
 | **Ultralytics** | 8.0+ | YOLO framework |
 | **OpenCV** | 4.8+ | Video processing & visualization |
 | **PyTorch** | 2.0+ | Deep learning backend |
@@ -210,7 +210,7 @@ pip install -r requirements.txt
 ```bash
 # The system will automatically download YOLOv8 models on first run
 # Or manually download:
-wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt
+wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolo26n.pt
 ```
 
 ### 5. Verify Installation
@@ -531,7 +531,6 @@ RECONNECT_DELAY = 2            # Seconds between retries
 - Use GPU if available
 - Lower `CONF_THRESHOLD` to reduce detections
 - Reduce `BUFFER_SIZE`
-- Use smaller YOLO model (yolov8n vs yolov8x)
 - Process every Nth frame
 
 **3. Inaccurate Counts**
@@ -618,7 +617,7 @@ We welcome contributions! Here's how:
 
 ### Acknowledgments
 
-- [Ultralytics](https://github.com/ultralytics/ultralytics) - YOLOv8 framework
+- [Ultralytics](https://github.com/ultralytics/ultralytics) - YOLO26 framework
 - [OpenCV](https://opencv.org/) - Computer vision library
 - [PyTorch](https://pytorch.org/) - Deep learning framework
 
