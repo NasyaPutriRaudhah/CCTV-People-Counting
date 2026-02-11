@@ -1,15 +1,10 @@
-"""
-Frame Buffer Management for RTSP Streams
-"""
 import os
 import cv2
 from collections import deque
 from config import BUFFER_SIZE, SAVE_BUFFER_TO_DISK, BUFFER_DIR
 
 
-class FrameBuffer:
-    """Buffer to store frames from RTSP before processing"""
-    
+class FrameBuffer:   
     def __init__(self, max_size=BUFFER_SIZE, save_to_disk=SAVE_BUFFER_TO_DISK, 
                  buffer_dir=BUFFER_DIR):
         self.max_size = max_size
