@@ -7,9 +7,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.8+-green.svg)](https://opencv.org/)
 [![YOLO26](https://img.shields.io/badge/YOLO26-Ultralytics-purple.svg)](https://github.com/ultralytics/ultralytics)
-[![License](https://img.shields.io/badge/license-Proprietary-red.svg)](LICENSE)
 
-**Developed by [PT Ferbos Kreasi Digital](https://github.com/ferbos) - Smart Building Solutions**
 
 [Features](#-features) •
 [Tech Stack](#-tech-stack) •
@@ -52,27 +50,26 @@ Perfect for retail analytics, building management, occupancy monitoring, and sma
 ## ✨ Features
 
 ### Core Capabilities
-- 🎯 **Dual Detection Modes** - ROI-based and line-crossing methods
-- ⚡ **Real-time Processing** - GPU-accelerated YOLO inference (30+ FPS)
-- 📹 **RTSP Support** - Live camera feed processing with auto-reconnection
-- 💾 **Data Persistence** - Automatic saving of counting data to JSON
-- 🎨 **Live Visualization** - Multi-panel display with overlays and statistics
-- 🔄 **Multi-threading** - Separate threads for capture and processing
+- **Dual Detection Modes** - ROI-based and line-crossing methods
+- **Real-time Processing** - GPU-accelerated YOLO inference (30+ FPS)
+- **RTSP Support** - Live camera feed processing with auto-reconnection
+- **Data Persistence** - Automatic saving of counting data to JSON
+- **Live Visualization** - Multi-panel display with overlays and statistics
 
 ### Advanced Features
-- 📊 **Performance Monitoring** - Detailed inference timing and FPS tracking
-- 🎚️ **Configurable Thresholds** - Fine-tune detection sensitivity
-- 🔍 **Duplicate Filtering** - Intelligent filtering of overlapping detections
-- 📝 **Event Logging** - Complete history of all crossing events
-- 🔄 **Frame Buffering** - Prevents frame drops from RTSP streams
-- 🎯 **Smoothed Tracking** - Temporal smoothing for stable counts
+- **Performance Monitoring** - Detailed inference timing and FPS tracking
+- **Configurable Thresholds** - Fine-tune detection sensitivity
+- **Duplicate Filtering** - Intelligent filtering of overlapping detections
+- **Event Logging** - Complete history of all crossing events
+- **Frame Buffering** - Prevents frame drops from RTSP streams
+- **Smoothed Tracking** - Temporal smoothing for stable counts
 
 ### Production-Ready
-- 🏗️ **Modular Architecture** - Clean separation of concerns
-- ⚙️ **Centralized Config** - Single source for all settings
-- 🐛 **Error Handling** - Graceful recovery from connection issues
-- 📈 **Scalable Design** - Easy to add more cameras/zones
-- 📚 **Well Documented** - Comprehensive guides and examples
+- **Modular Architecture** - Clean separation of concerns
+- **Centralized Config** - Single source for all settings
+- **Error Handling** - Graceful recovery from connection issues
+- **Scalable Design** - Easy to add more cameras/zones
+- **Well Documented** - Comprehensive guides and examples
 
 ---
 
@@ -619,41 +616,12 @@ We welcome contributions! Here's how:
 
 ---
 
-## 📄 License
-
-This project is proprietary software developed by **PT Ferbos Kreasi Digital**.
-
-**© 2024 PT Ferbos Kreasi Digital. All rights reserved.**
-
-For licensing inquiries, contact: [ferbos@example.com](mailto:ferbos@example.com)
-
----
-
-## 👥 Team
-
-**PT Ferbos Kreasi Digital** - Smart Building as a Service (SBaaS)
-
-- **Ferbos** - CEO & Founder - [GitHub](https://github.com/ferbos)
-
 ### Acknowledgments
 
 - [Ultralytics](https://github.com/ultralytics/ultralytics) - YOLOv8 framework
 - [OpenCV](https://opencv.org/) - Computer vision library
 - [PyTorch](https://pytorch.org/) - Deep learning framework
 
----
-
-## 📞 Support
-
-- **Email**: ferbos@ferbosdigital.com
-- **Issues**: [GitHub Issues](https://github.com/ferbos/cctv-people-counting/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/ferbos/cctv-people-counting/discussions)
-
----
-
-## 🌟 Star History
-
-If you find this project useful, please consider giving it a ⭐!
 
 ---
 
@@ -661,6 +629,5 @@ If you find this project useful, please consider giving it a ⭐!
 
 **[⬆ back to top](#-cctv-people-counting-system)**
 
-Made with ❤️ by PT Ferbos Kreasi Digital
 
 </div>
