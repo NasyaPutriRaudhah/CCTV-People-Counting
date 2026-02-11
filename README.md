@@ -2,7 +2,7 @@
 
 # 🎯 CCTV People Counting System
 
-### Real-time People Counting & Tracking using YOLOv8 Computer Vision
+### Real-time People Counting & Tracking using YOLO26 Computer Vision
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.8+-green.svg)](https://opencv.org/)
