@@ -117,8 +117,17 @@ Edit `config.py` with the coordinates from Step 2:
 
 ```python
 # Example configuration
-ROI_COORDINATES = [(100, 200), (400, 200), (400, 500), (100, 500)]
-LINE_COORDINATES = [(0, 300), (640, 300)]
+ROI1_POINTS = np.array([
+    [41, 40],
+    [804, 25],
+    [960, 130],
+    [953, 328],
+    [10, 315],
+], dtype=np.int32)
+
+LINE2_X1, LINE2_X2 = 303, 455
+LINE2_ENTER_Y = 90
+LINE2_EXIT_Y = 140
 ```
 
 **Don't forget to save the file!**
