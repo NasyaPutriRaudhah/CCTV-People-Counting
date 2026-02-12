@@ -1,6 +1,3 @@
-"""
-Display and Visualization Functions
-"""
 import cv2
 import numpy as np
 from config import DISPLAY_WIDTH, DISPLAY_HEIGHT, DATA_SAVE_FILE
