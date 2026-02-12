@@ -32,27 +32,17 @@ DATA_SAVE_INTERVAL = 60  # Save data every N seconds
 
 #Video 
 ROI1_POINTS = np.array([
-    [396, 295],
-    [717, 290],
-    [740, 344],
-    [451, 354],
-    [442, 370],
-    [445, 382],
-    [447, 390],
-    [447, 407],
-    [445, 409],
-    [438, 414],
-    [434, 415],
-    [428, 416],
-    [414, 417],
-    [391, 418],
-    [381, 417]
+    [41, 40],
+    [804, 25],
+    [960, 130],
+    [953, 328],
+    [10, 315],
 ], dtype=np.int32)
 
 #Video 2 line coordinates
-LINE2_X1, LINE2_X2 = 500, 760
-LINE2_ENTER_Y = 340
-LINE2_EXIT_Y = 390
+LINE2_X1, LINE2_X2 = 303, 455
+LINE2_ENTER_Y = 90
+LINE2_EXIT_Y = 140
 
 #Crossing tracker settings
 CROSSING_THRESHOLD = 10  # Pixels past the line to confirm crossing

@@ -8,33 +8,19 @@ from config import CROSSING_THRESHOLD, MAX_TRACKING_DISTANCE, TRACK_TIMEOUT
 
 
 class SimplifiedLineCrossingTracker:
-    """
-    Simplified tracker - Only track for crossing detection
-    
-    Logic:
-    1. Track person frame-by-frame to detect movement
-    2. When crossing ENTER line (down): +1 → STOP TRACKING
-    3. When crossing EXIT line (up): -1 → STOP TRACKING
-    4. No "entered" or "exited" flags - just detect crossing and count
-    """
-    
     def __init__(self, enter_y, exit_y, threshold=CROSSING_THRESHOLD):
         self.enter_y = enter_y
         self.exit_y = exit_y
         self.threshold = threshold
         
         # Only track people temporarily for crossing detection
-        self.active_tracks = {}  # {track_id: {cx, cy, last_y, last_seen}}
+        self.active_tracks = {}  # {track_id: {cx, cy, last_y, last_seen, crossed_enter, crossed_exit}}
         self.next_id = 0
         
         # Recently crossed positions (to prevent double counting)
         self.recent_crossings = deque(maxlen=50)
     
     def update(self, detections):
-        """
-        Update tracker with new detections
-        Returns: (entries, exits)
-        """
         entries = 0
         exits = 0
         current_time = time.time()
@@ -60,34 +46,68 @@ class SimplifiedLineCrossingTracker:
                 # Matched with existing track - check for crossing
                 track = self.active_tracks[best_match_id]
                 prev_y = track['cy']
+                crossed_enter = track.get('crossed_enter', False)
+                crossed_exit = track.get('crossed_exit', False)
                 
                 # ENTER CROSSING: Moving DOWN, crossing ENTER line
                 if (prev_y > self.enter_y and cy < self.enter_y):
-                    # Crossed ENTER line going DOWN
-                    if not self._is_recent_crossing(cx, cy, 'entry'):
-                        entries += 1
-                        self._add_crossing(cx, cy, 'entry', current_time)
-                        print(f"✓ [ENTRY +1] Person crossed ENTER (y: {prev_y:.0f}→{cy:.0f})")
-                        # STOP TRACKING - don't add to new_tracks
+                    # Only count if they haven't already crossed the ENTER line
+                    if not crossed_enter:
+                        # Crossed ENTER line going DOWN
+                        if not self._is_recent_crossing(cx, cy, 'entry'):
+                            entries += 1
+                            self._add_crossing(cx, cy, 'entry', current_time)
+                            print(f"✓ [ENTRY +1] Person crossed ENTER (y: {prev_y:.0f}→{cy:.0f})")
+                            # STOP TRACKING - don't add to new_tracks
+                            matched_ids.add(best_match_id)
+                            continue  # Skip adding to new_tracks
+                    else:
+                        # Already counted, they're re-entering from between the lines
+                        print(f"⊘ [SKIP ENTRY] Person re-crossed ENTER but already counted (y: {prev_y:.0f}→{cy:.0f})")
+                        # Continue tracking but mark they crossed enter again
+                        new_tracks[best_match_id] = {
+                            'cx': cx,
+                            'cy': cy,
+                            'last_seen': current_time,
+                            'crossed_enter': True,
+                            'crossed_exit': False  # Reset exit flag
+                        }
                         matched_ids.add(best_match_id)
-                        continue  # Skip adding to new_tracks
+                        continue
                 
                 # EXIT CROSSING: Moving UP, crossing EXIT line
                 elif (prev_y < self.exit_y and cy > self.exit_y):
-                    # Crossed EXIT line going UP
-                    if not self._is_recent_crossing(cx, cy, 'exit'):
-                        exits += 1
-                        self._add_crossing(cx, cy, 'exit', current_time)
-                        print(f"✓ [EXIT -1] Person crossed EXIT (y: {prev_y:.0f}→{cy:.0f})")
-                        # STOP TRACKING - don't add to new_tracks
+                    # Only count if they haven't already crossed the EXIT line
+                    if not crossed_exit:
+                        # Crossed EXIT line going UP
+                        if not self._is_recent_crossing(cx, cy, 'exit'):
+                            exits += 1
+                            self._add_crossing(cx, cy, 'exit', current_time)
+                            print(f"✓ [EXIT -1] Person crossed EXIT (y: {prev_y:.0f}→{cy:.0f})")
+                            # STOP TRACKING - don't add to new_tracks
+                            matched_ids.add(best_match_id)
+                            continue  # Skip adding to new_tracks
+                    else:
+                        # Already counted, they're re-exiting from between the lines
+                        print(f"⊘ [SKIP EXIT] Person re-crossed EXIT but already counted (y: {prev_y:.0f}→{cy:.0f})")
+                        # Continue tracking but mark they crossed exit again
+                        new_tracks[best_match_id] = {
+                            'cx': cx,
+                            'cy': cy,
+                            'last_seen': current_time,
+                            'crossed_enter': False,  # Reset enter flag
+                            'crossed_exit': True
+                        }
                         matched_ids.add(best_match_id)
-                        continue  # Skip adding to new_tracks
+                        continue
                 
                 # Still tracking (no crossing detected) - update position
                 new_tracks[best_match_id] = {
                     'cx': cx,
                     'cy': cy,
-                    'last_seen': current_time
+                    'last_seen': current_time,
+                    'crossed_enter': crossed_enter,
+                    'crossed_exit': crossed_exit
                 }
                 matched_ids.add(best_match_id)
             
@@ -99,7 +119,9 @@ class SimplifiedLineCrossingTracker:
                 new_tracks[new_id] = {
                     'cx': cx,
                     'cy': cy,
-                    'last_seen': current_time
+                    'last_seen': current_time,
+                    'crossed_enter': False,
+                    'crossed_exit': False
                 }
         
         # Keep tracks that were not matched but seen recently

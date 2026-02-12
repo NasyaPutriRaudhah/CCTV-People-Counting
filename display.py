@@ -8,22 +8,7 @@ from config import DISPLAY_WIDTH, DISPLAY_HEIGHT, DATA_SAVE_FILE
 
 def create_combined_view(frame1, frame2, count_v1, count_v2, buffer_size, 
                         fps_capture, fps_process, data_summary):
-    """
-    Combine both videos with statistics overlay
-    
-    Args:
-        frame1: Processed frame from video 1
-        frame2: Processed frame from video 2
-        count_v1: Count from video 1 (ROI)
-        count_v2: Current count from video 2 (line crossing)
-        buffer_size: Current buffer size
-        fps_capture: Capture FPS
-        fps_process: Processing FPS
-        data_summary: Summary from DataPersistence
-    
-    Returns:
-        Combined view frame
-    """
+
     frame1_display = cv2.resize(frame1, (DISPLAY_WIDTH, DISPLAY_HEIGHT))
     frame2_display = cv2.resize(frame2, (DISPLAY_WIDTH, DISPLAY_HEIGHT))
     
@@ -45,12 +30,12 @@ def create_combined_view(frame1, frame2, count_v1, count_v2, buffer_size,
                 cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
     
     y_offset += line_height
-    cv2.putText(combined_view, f'Video 1 (ROI): {count_v1}', (25, y_offset),
+    cv2.putText(combined_view, f'Video 1: {count_v1}', (25, y_offset),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 255, 0), 2)
     
     # Line crossing details
     y_offset += line_height + 5
-    cv2.putText(combined_view, 'VIDEO 2 - SIMPLIFIED TRACKING:', (25, y_offset),
+    cv2.putText(combined_view, 'VIDEO 2 :', (25, y_offset),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 200, 0), 2)
     
     y_offset += line_height
@@ -94,15 +79,6 @@ def create_combined_view(frame1, frame2, count_v1, count_v2, buffer_size,
 
 
 def print_final_report(timer_v1, timer_v2, total_runtime, data_persistence):
-    """
-    Print comprehensive final report
-    
-    Args:
-        timer_v1: InferenceTimer for video 1
-        timer_v2: InferenceTimer for video 2
-        total_runtime: Total runtime in seconds
-        data_persistence: DataPersistence object
-    """
     stats_v1 = timer_v1.get_statistics()
     stats_v2 = timer_v2.get_statistics()
     summary = data_persistence.get_summary()

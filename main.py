@@ -1,11 +1,13 @@
+# main_with_cropped_coords.py
 import cv2
 import time
 import numpy as np
+import json
 
 # Import configuration
 from config import (
     DEVICE, VIDEO1_PATH, VIDEO2_PATH, STARTING_COUNT, 
-    DATA_SAVE_INTERVAL, LINE2_ENTER_Y, LINE2_EXIT_Y
+    DATA_SAVE_INTERVAL, VIDEO_RESIZE_WIDTH, VIDEO_RESIZE_HEIGHT
 )
 
 # Import utilities and components
@@ -20,7 +22,65 @@ from processors import process_video1_roi, process_video2_line
 from display import create_combined_view, print_final_report
 
 
+def load_coordinates_config():
+    """Load coordinates configuration from JSON file"""
+    try:
+        with open('coordinates_cropped.json', 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print("⚠ No coordinates_cropped.json found")
+        print("Run 'python redefine_coordinates.py' to create it")
+        return None
+
+
+def apply_crop(frame, crop_config):
+    """Apply crop to frame"""
+    if crop_config is None:
+        return frame
+    
+    x = crop_config['x']
+    y = crop_config['y']
+    w = crop_config['width']
+    h = crop_config['height']
+    
+    return frame[y:y+h, x:x+w]
+
+
 def main():
+    # Load coordinates configuration
+    coords_config = load_coordinates_config()
+    
+    if coords_config is None:
+        print("ERROR: Missing configuration file!")
+        print("Please run: python redefine_coordinates.py")
+        return
+    
+    crop_config = coords_config['crop']
+    
+    # Get ROI and line coordinates
+    if coords_config['video1_roi'] is not None:
+        roi1_points = np.array(coords_config['video1_roi'], dtype=np.int32)
+        print("✓ Video 1 ROI loaded")
+    else:
+        print("⚠ No ROI defined for Video 1")
+        from config import ROI1_POINTS
+        roi1_points = ROI1_POINTS
+    
+    if coords_config['video2_lines'] is not None:
+        lines = coords_config['video2_lines']
+        line2_x1 = lines['x1']
+        line2_x2 = lines['x2']
+        line2_enter_y = lines['enter_y']
+        line2_exit_y = lines['exit_y']
+        print("✓ Video 2 lines loaded")
+    else:
+        print("⚠ No lines defined for Video 2")
+        from config import LINE2_X1, LINE2_X2, LINE2_ENTER_Y, LINE2_EXIT_Y
+        line2_x1 = LINE2_X1
+        line2_x2 = LINE2_X2
+        line2_enter_y = LINE2_ENTER_Y
+        line2_exit_y = LINE2_EXIT_Y
+    
     # Print device info
     print_device_info(DEVICE)
     print()
@@ -31,9 +91,9 @@ def main():
     # Initialize data persistence
     data_persistence = DataPersistence()
     
-    # Initialize line tracker
-    line_tracker = SimplifiedLineCrossingTracker(LINE2_ENTER_Y, LINE2_EXIT_Y)
-    print("✓ Simplified tracker initialized")
+    # Initialize line tracker with the new coordinates
+    line_tracker = SimplifiedLineCrossingTracker(line2_enter_y, line2_exit_y)
+    print("✓ Line tracker initialized")
     
     # Open Video 1
     cap1 = cv2.VideoCapture(VIDEO1_PATH)
@@ -82,7 +142,14 @@ def main():
                 cap1.set(cv2.CAP_PROP_POS_FRAMES, 0)
                 continue
             
-            processed_frame1, c1 = process_video1_roi(frame1, model1, id_history_v1, timer_v1)
+            # Apply crop to Video 1
+            frame1_cropped = apply_crop(frame1, crop_config['video1'])
+            
+            # Process with the ROI points (no scaling needed - defined on cropped frame)
+            processed_frame1, c1 = process_video1_roi(
+                frame1_cropped, model1, id_history_v1, timer_v1, 
+                roi_points=roi1_points
+            )
             count_v1 = c1
             
             # ==========================================
@@ -92,8 +159,16 @@ def main():
                 frame2 = frame_buffer_v2.get_frame()
                 
                 if frame2 is not None:
+                    # Apply crop to Video 2
+                    frame2_cropped = apply_crop(frame2, crop_config['video2'])
+                    
+                    # Process with the line coordinates (no scaling needed - defined on cropped frame)
                     processed_frame2, count_v2 = process_video2_line(
-                        frame2, model2, timer_v2, line_tracker, data_persistence
+                        frame2_cropped, model2, timer_v2, line_tracker, data_persistence,
+                        line_x1=line2_x1,
+                        line_x2=line2_x2,
+                        line_enter_y=line2_enter_y,
+                        line_exit_y=line2_exit_y
                     )
                 else:
                     processed_frame2 = np.zeros((600, 1020, 3), dtype=np.uint8)
