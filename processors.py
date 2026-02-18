@@ -12,19 +12,6 @@ from utils import point_in_roi, filter_close_detections
 
 
 def process_video1_roi(frame, model, id_history, timer, roi_points=None):
-    """
-    Process Video 1 with ROI detection
-    
-    Args:
-        frame: Input frame (can be cropped or full)
-        model: YOLO model
-        id_history: Dictionary tracking ID history
-        timer: InferenceTimer object
-        roi_points: ROI polygon points (for cropped frame, no scaling needed)
-    
-    Returns:
-        Processed frame and count of people in ROI
-    """
     # Use provided ROI points or default from config
     if roi_points is None:
         roi_points = ROI1_POINTS
@@ -107,23 +94,6 @@ def process_video1_roi(frame, model, id_history, timer, roi_points=None):
 
 def process_video2_line(frame, model, timer, line_tracker, data_persistence, 
                         line_x1=None, line_x2=None, line_enter_y=None, line_exit_y=None):
-    """
-    Process Video 2 with line crossing detection
-    
-    Args:
-        frame: Input frame (can be cropped or full)
-        model: YOLO model
-        timer: InferenceTimer object
-        line_tracker: SimplifiedLineCrossingTracker object
-        data_persistence: DataPersistence object
-        line_x1: Left x-coordinate of lines (for cropped frame, no scaling needed)
-        line_x2: Right x-coordinate of lines (for cropped frame, no scaling needed)
-        line_enter_y: Y-coordinate of enter line (for cropped frame, no scaling needed)
-        line_exit_y: Y-coordinate of exit line (for cropped frame, no scaling needed)
-    
-    Returns:
-        Processed frame and current count
-    """
     # Use provided line coordinates or default from config
     if line_x1 is None:
         line_x1 = LINE2_X1
