@@ -1,0 +1,169 @@
+=== Alert Monitor Started: Jum 27 Mar 2026 02:36:50  WIB ===
+Jum 27 Mar 2026 02:36:50  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:37:52  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:38:53  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:39:54  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:40:55  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:41:56  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:42:57  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:43:59  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:45:00  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:46:01  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:47:02  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:48:03  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:49:05  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:50:06  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:51:07  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:52:08  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:53:09  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:54:10  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:55:12  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:56:13  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:57:14  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:58:15  WIB ✅ cctv_app running
+Jum 27 Mar 2026 02:59:16  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:00:17  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:01:18  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:02:20  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:03:21  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:04:22  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:05:23  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:06:24  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:07:25  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:08:27  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:09:28  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:10:29  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:11:30  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:12:31  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:13:32  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:14:33  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:15:35  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:16:36  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:17:37  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:18:38  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:19:39  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:20:40  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:21:41  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:22:43  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:23:44  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:24:45  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:25:46  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:26:47  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:27:48  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:28:50  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:29:51  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:30:52  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:31:53  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:32:54  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:33:55  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:34:56  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:35:58  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:36:59  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:38:00  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:39:01  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:40:02  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:41:03  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:42:04  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:43:06  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:44:07  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:45:08  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:46:09  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:47:10  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:48:11  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:49:12  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:50:14  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:51:15  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:52:16  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:53:17  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:54:18  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:55:19  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:56:20  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:57:22  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:58:23  WIB ✅ cctv_app running
+Jum 27 Mar 2026 03:59:24  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:00:25  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:01:26  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:02:27  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:03:29  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:04:30  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:05:31  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:06:32  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:07:33  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:08:34  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:09:35  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:10:37  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:11:38  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:12:39  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:13:40  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:14:41  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:15:42  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:16:44  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:17:45  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:18:46  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:19:47  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:20:48  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:21:49  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:22:50  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:23:52  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:24:53  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:25:54  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:26:55  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:27:56  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:28:57  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:29:58  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:31:00  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:32:01  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:33:02  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:34:03  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:35:04  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:36:05  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:37:06  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:38:08  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:39:09  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:40:10  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:41:11  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:42:12  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:43:13  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:44:14  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:45:16  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:46:17  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:47:18  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:48:19  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:49:20  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:50:21  WIB ✅ cctv_app running
+Jum 27 Mar 2026 04:51:22  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 04:52:23  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 04:53:23  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 04:54:23  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 04:55:23  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 04:56:23  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 04:57:23  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 04:58:23  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 04:59:23  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:00:23  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:01:24  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:02:24  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:03:24  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:04:24  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:05:24  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:06:24  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:07:24  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:08:24  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:09:25  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:10:25  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:11:25  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:12:25  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:13:25  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:14:25  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:15:25  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:16:25  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:17:25  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:18:26  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:19:26  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:20:26  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:21:26  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:22:26  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:23:26  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:24:26  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:25:26  WIB ⚠️  ALERT: cctv_app container DOWN!
+Jum 27 Mar 2026 05:26:27  WIB ⚠️  ALERT: cctv_app container DOWN!

@@ -1,0 +1,97 @@
+=======================================================
+  MODEL TRAINING & REPRODUCIBILITY RECORD — QA2
+=======================================================
+Date              : 27 March 2026
+Project           : CCTV People Counting System
+Device            : Jetson Orin Nano
+Responsible       : ML Engineer / Project Lead
+
+-------------------------------------------------------
+  1. MODEL INFORMATION
+-------------------------------------------------------
+Model File        : yolo11n.engine
+Model Format      : TensorRT Engine (.engine)
+Base Model        : YOLO11n (Ultralytics)
+MD5 Checksum      : 22225c03fc6e4a20f0d237f1970e8461
+Docker Image Name : cctv-people-counting-cctv_app
+Docker Image SHA  : sha256:967dfbd78af4bef4a83cc38856c76a33e7bcca3893ea214af6da924f5f12dda4
+
+-------------------------------------------------------
+  2. INFERENCE CONFIGURATION (from config.py)
+-------------------------------------------------------
+Device            : CUDA (TensorRT) — fallback to CPU
+CONF_THRESHOLD    : 0.3
+IOU_THRESHOLD     : 0.65
+SMOOTH_WINDOW     : 3
+MIN_DETECTION_DISTANCE : 50 pixels
+CROSSING_THRESHOLD     : 10 pixels
+MAX_TRACKING_DISTANCE  : 100 pixels
+TRACK_TIMEOUT          : 1.5 seconds
+Tracker           : ByteTrack (bytetrack.yaml)
+Detection Class   : Person only (class 0)
+
+-------------------------------------------------------
+  3. VIDEO & STREAM CONFIGURATION
+-------------------------------------------------------
+Video 1 (ROI)     : Local video file (mp4)
+Video 2 (Line)    : RTSP Stream — H.264 encoding via LAN
+RTSP Protocol     : TCP
+Buffer Size       : 300 frames (10 seconds at 30 FPS)
+Save Buffer       : Memory only (not disk)
+Process All Frames: True
+
+-------------------------------------------------------
+  4. ROI & LINE COORDINATES
+-------------------------------------------------------
+ROI Points (Video 1):
+  [41, 40], [804, 25], [960, 130], [953, 328], [10, 315]
+
+Line Crossing (Video 2):
+  X range   : 303 to 455
+  Enter Y   : 90
+  Exit Y    : 140
+
+Video Resize      : 1020 x 600 px
+
+-------------------------------------------------------
+  5. SYSTEM & DEPLOYMENT
+-------------------------------------------------------
+Runtime           : Docker Container (cctv_app)
+Container Command : python3 -u main.py
+Database          : PostgreSQL 15 (cctv_postgres container)
+Monitoring        : Grafana 10.4.0 (cctv_grafana container)
+Dashboard Port    : 8080
+Grafana Port      : 3000
+PostgreSQL Port   : 5432
+DB Name           : cctv_counting
+DB Schema         : cctv
+
+-------------------------------------------------------
+  6. REPRODUCIBILITY VALIDATION
+-------------------------------------------------------
+To reproduce this model from scratch:
+
+  Step 1 — Export TensorRT engine from base YOLO model:
+    yolo export model=yolo11n.pt format=engine device=0 imgsz=640
+
+  Step 2 — Verify checksum after export:
+    md5sum yolo11n.engine
+    Expected: 22225c03fc6e4a20f0d237f1970e8461
+
+  Step 3 — Run container:
+    docker-compose up -d
+
+  Step 4 — Validate inference performance:
+    docker exec -it cctv_app python3 check_fps.py
+
+Reproducibility Target : Accuracy within +/- 2% of original
+Reproducibility Status : [ ] Verified  [ ] Pending
+
+-------------------------------------------------------
+  7. RECONNECTION & RELIABILITY CONFIG
+-------------------------------------------------------
+Max Reconnect Attempts : 5
+Reconnect Delay        : 2 seconds
+Data Save Interval     : 60 seconds
+Data Save File         : line_crossing_data.json
+Starting Count         : 30

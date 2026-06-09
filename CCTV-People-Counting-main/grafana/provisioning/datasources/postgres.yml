@@ -1,0 +1,21 @@
+apiVersion: 1
+
+datasources:
+  - name: PostgreSQL
+    type: postgres
+    uid: cctv-postgres
+    # Grafana runs in a bridge network, reaches postgres by service name
+    url: cctv_postgres:5432
+    database: cctv_counting
+    user: ferbos
+    secureJsonData:
+      password: cctv_ferbos_2024
+    jsonData:
+      sslmode: disable
+      maxOpenConns: 10
+      maxIdleConns: 2
+      connMaxLifetime: 14400
+      postgresVersion: 1500
+      timescaledb: false
+    isDefault: true
+    editable: false

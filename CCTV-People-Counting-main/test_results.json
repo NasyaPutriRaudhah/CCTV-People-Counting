@@ -1,0 +1,18 @@
+{
+  "test_duration_s": 120,
+  "timestamp": "2026-03-25 01:55:02",
+  "frame_drop": {
+    "v2_total_attempts": 1150,
+    "v2_processed": 1150,
+    "v2_dropped": 0,
+    "v2_drop_rate_pct": 0.0,
+    "pass": true
+  },
+  "latency": {
+    "median_s": 0.0376,
+    "mean_s": 0.04,
+    "max_s": 0.1613,
+    "p95_s": 0.054,
+    "crossing_events": 0,
+    "crossing_median_s": null,
+    "pass": 

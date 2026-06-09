@@ -1,0 +1,67 @@
+import numpy as np
+import torch
+
+#Device configuration
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+
+#Defining path
+VIDEO1_PATH = 'Video from Nasya Putri (1).mp4'  # ROI Detection
+VIDEO2_PATH = 'rtsp://admin:Ferbos2024!@192.168.68.109:554/Streaming/Channels/102?tcp'
+MODEL_PATH = 'yolo11n.engine'
+
+#Detection parameters
+CONF_THRESHOLD = 0.3
+IOU_THRESHOLD = 0.65
+SMOOTH_WINDOW = 3
+MIN_DETECTION_DISTANCE = 50  # pixels
+
+#RTSP Reconnection settings 
+MAX_RECONNECT_ATTEMPTS = 5
+RECONNECT_DELAY = 2  # seconds
+
+#Buffer settings
+BUFFER_SIZE = 300  # Maximum frames to store (10 seconds at 30fps)
+BUFFER_DIR = './rtsp_buffer'
+SAVE_BUFFER_TO_DISK = False  # Set True to save to disk, False for memory
+PROCESS_ALL_FRAMES = True  # Process every single frame
+
+#Line crossing data persistence
+STARTING_COUNT = 30  # Initial people count
+DATA_SAVE_FILE = 'line_crossing_data.json'
+DATA_SAVE_INTERVAL = 60  # Save data every N seconds
+
+#Video 
+ROI1_POINTS = np.array([
+    [41, 40],
+    [804, 25],
+    [960, 130],
+    [953, 328],
+    [10, 315],
+], dtype=np.int32)
+
+#Video 2 line coordinates
+LINE2_X1, LINE2_X2 = 303, 455
+LINE2_ENTER_Y = 90
+LINE2_EXIT_Y = 140
+
+#Crossing tracker settings
+CROSSING_THRESHOLD = 10  # Pixels past the line to confirm crossing
+MAX_TRACKING_DISTANCE = 100  # Maximum distance to match person between frames
+TRACK_TIMEOUT = 1.5  # Seconds to keep tracking if person disappears
+
+#Display settings
+VIDEO_RESIZE_WIDTH = 1020
+VIDEO_RESIZE_HEIGHT = 600
+DISPLAY_WIDTH = 640
+DISPLAY_HEIGHT = 480
+
+# Database configuration
+DB_HOST = "localhost"
+DB_PORT = 5432
+DB_NAME = "cctv_counting"
+DB_USER = "ferbos"
+DB_PASSWORD = "cctv_ferbos_2024"
+
+
+
+
